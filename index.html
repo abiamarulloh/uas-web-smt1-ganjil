@@ -245,7 +245,7 @@
             // Logic Tiket
             var jml_tiket = document.getElementById("jml_tiket").value;
             var diskon = 0;
-            if(jml_tiket > 3) diskon = 30 / 100
+            if(jml_tiket > 3) diskon = 30
             document.getElementById("txt_jml_tiket").innerHTML = jml_tiket;
 
             // Logic Kelas
@@ -286,7 +286,8 @@
 
 
             // Logic Total Harga
-            let total_harga = harga * jml_tiket - (diskon) + biayaBagasi + biayaAsuransi
+            let hargaTiket = harga * jml_tiket;
+            let total_harga = (hargaTiket * diskon)  / 100 + biayaBagasi + biayaAsuransi
             document.getElementById("txt_total_harga").innerHTML = formatRupiah(total_harga);
 
             // Validasi Simple
